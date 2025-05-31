@@ -1,4 +1,4 @@
-# Multimedia Semantic Search
+# Multimedia Semantic Search, Summarize, and Analyze
 
 An application that enables lightweight semantic search capabilities across multimedia content including images, text, and videos. The system leverages Google's Gemini Pro Vision for image and video analysis, OpenAI's GPT-3.5 for text processing, and All-MiniLM-L6-v2 for generating vector embeddings, making it easier to find relevant media using natural language queries, as well as image/video uploads.
 
