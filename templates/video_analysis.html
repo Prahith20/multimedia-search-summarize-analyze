@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload and Process Video</title>
+</head>
+<body>
+    <h1>Upload a Video and Display the Result</h1>
+
+    <!-- Video Upload Form -->
+    <form method="POST" enctype="multipart/form-data">
+        <label for="file">Choose a video file:</label>
+        <input type="file" name="file" accept="video/*" id="file" required>
+        <button type="submit">Upload</button>
+    </form>
+
+    <!-- Display the Result if Available -->
+    {% if flag %}
+        <h2>Processing Result</h2>
+        <iframe src="http://localhost:8501/?flag=True" width="100%" height="600px"></iframe>
+    {% endif %}
+
+</body>
+</html>

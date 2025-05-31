@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Application</title>
+    <style>
+        button {
+            display: block;
+            margin: 10px;
+            padding: 10px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Media Summary</h1>
+
+    
+    <h2>Select Media Type</h2>
+    <button id="image-option">Image</button>
+    <button id="video-option">Video</button>
+    
+
+    <script>
+        
+        document.getElementById('image-option').onclick = function() {
+            window.location.href = '/image-upload-for-summary';
+        };
+
+        document.getElementById('video-option').onclick = function() {
+            window.location.href = '/video-upload-for-summary';
+        };
+    </script>
+</body>
+</html>

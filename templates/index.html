@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Application</title>
+    <style>
+        button {
+            display: block;
+            margin: 10px;
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Media Application</h1>
+
+    <h2>Select Option</h2>
+    <button id="search-button">Search</button>
+    <button id="summary-button">Summary</button>
+    <button id="video-analysis-button">Video analyzation</button>
+
+    <script>
+        document.getElementById('search-button').onclick = function() {
+            window.location.href = '/search';
+        };
+
+        document.getElementById('summary-button').onclick = function() {
+            window.location.href = '/summary';
+        };
+        document.getElementById('video-analysis-button').onclick = function() {
+            window.location.href = '/video_analysis';
+        };
+    </script>
+</body>
+</html>

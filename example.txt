@@ -1,0 +1,31 @@
+The video is a lecture about business analytics. The speaker starts by explaining the difference between statistical analysis, computer science, and business analytics.
+
+Statistical analysis typically starts with a hypothesis, then designs the data collection process, analyzes the data, and finally draws conclusions. The focus is on modeling and inference, and the decision-making process is not considered.
+
+Computer science, on the other hand, is more goal-oriented. The focus is on algorithmic development to achieve a specific goal. Data collection and business problems are not the primary focus, and there is often no human involvement in the decision-making process.
+
+Business analytics is a more holistic approach that combines elements of both statistical analysis and computer science. It starts with identifying a business problem, then uses data analysis to generate actionable insights that can be used to make decisions. The final product must be a set of actionable insights, and business implication and storytelling are crucial.
+
+The speaker then discusses two different approaches to business analytics: the empirical approach and the data-driven method.
+
+The empirical approach is the traditional approach, where everything starts from empirical knowledge or knowledge acquired from literature. A hypothesis is developed, data is collected, and the data is analyzed to draw conclusions.
+
+The data-driven method starts with domain knowledge and exploratory analysis on a given dataset. The goal is to identify interesting observations and develop a story around them. Further analysis is then conducted to add depth to the story, and finally, the practical implications of the findings are discussed.
+
+The speaker emphasizes the importance of domain knowledge in business analytics. Without understanding the domain, it is impossible to identify a meaningful business problem. The speaker also stresses the importance of storytelling in business analytics. The final product must be a story that makes sense to the domain experts and is appealing to the audience.
+
+The speaker then provides an example of a data-driven method project. The project is about comparing the delivery speed of Cainiao, the logistics arm of Tmall.com, with non-Cainiao orders. The speaker first conducts an exploratory analysis to find interesting observations. The speaker then adds depth to the analysis by considering other variables, such as the size of the logistic company and the location of the customer. Finally, the speaker discusses the practical implications of the findings and suggests that Cainiao should focus on strengthening their relationship with major carriers for their reliable performance.
+
+The speaker concludes the lecture by emphasizing the importance of having a central theme in business analytics projects. Without a clear focus, the project will not be successful. The speaker also encourages students to do their best to learn about the domain and the data, and to tell a good story.
+
+Here are some additional details that might be helpful for business analytics for a dataset:
+
+* When conducting an exploratory analysis, it is important to ask simple questions and see if you can answer them.
+* Be aware of the limitations of your dataset.
+* When adding depth to your analysis, consider other variables that might have an impact on your findings.
+* Prioritize your secondary variables and construct a hierarchy.
+* Use external information to back up your suggestions.
+* Tell a good story that is both interesting and informative.
+* Have a central theme in your project.
+* Do not try to overachieve.
+* Summarize your project in two sentences: one for your overall findings and one for your punchline.

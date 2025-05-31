@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Search Application</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h1>Video Search Application</h1>
+
+    <h2>Upload Videos</h2>
+    <form id="upload-form" enctype="multipart/form-data">
+        <input type="file" name="files" accept="video/*" multiple required>
+        <button type="submit">Upload Videos</button>
+    </form>
+    <div id="upload-result"></div>
+
+    <h2>Search Videos</h2>
+    <form id="search-form" enctype="multipart/form-data">
+        <input type="text" name="search_text" placeholder="Enter search text">
+        <input type="file" name="image_file" accept="image/*,video/*">
+        <button type="submit">Search</button>
+    </form>
+    <div id="search-result"></div>
+
+    <script>
+        // Handle upload form submission
+        $('#upload-form').on('submit', function(event) {
+            event.preventDefault();
+            let formData = new FormData(this);
+            $.ajax({
+                url: '/upload_videos',
+                type: 'POST',
+                data: formData,
+                contentType: false,
+                processData: false,
+                success: function(response) {
+                    $('#upload-result').text(response.message);
+                },
+                error: function(xhr) {
+                    $('#upload-result').text('Error: ' + xhr.responseJSON.error);
+                }
+            });
+        });
+
+        // Handle search form submission
+        $('#search-form').on('submit', function(event) {
+            event.preventDefault();
+            let formData = new FormData(this);
+            $.ajax({
+                url: '/video_search',
+                type: 'POST',
+                data: formData,
+                contentType: false,
+                processData: false,
+                success: function(response) {
+                    $('#search-result').empty();
+                    response.forEach(function(video) {
+                        $('#search-result').append('<video width="200" controls><source src="' + video + '" type="video/mp4">Your browser does not support the video tag.</video>');
+                    });
+                },
+                error: function(xhr) {
+                    $('#search-result').text('Error: ' + xhr.responseJSON.error);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

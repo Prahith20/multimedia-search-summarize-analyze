@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Upload & Chatbot</title>
+    <style>
+        #chat-log { margin-top: 20px; }
+        .message { margin: 5px 0; }
+    </style>
+</head>
+<body>
+    <h1>Image Upload</h1>
+    <form id="upload-form" enctype="multipart/form-data">
+        <input type="file" name="image" required>
+        <button type="submit">Upload</button>
+    </form>
+
+    <div id="result" style="display:none;">
+        <h2>Uploaded Image</h2>
+        <img id="uploaded-image" src="" alt="Uploaded Image" width="300">
+        <p id="description"></p>
+    </div>
+
+    <div id="chat">
+        <h2>Chat with Image</h2>
+        <input type="text" id="question" placeholder="Ask a question..." required>
+        <button id="send-question">Send</button>
+        <div id="chat-log"></div>
+    </div>
+
+    <script>
+        document.getElementById('upload-form').onsubmit = async function(event) {
+            event.preventDefault();
+            const formData = new FormData(this);
+            const response = await fetch('/upload_image_for_summary', {
+                method: 'POST',
+                body: formData
+            });
+            const data = await response.json();
+
+            if (response.ok) {
+                document.getElementById('uploaded-image').src = data.image_url;
+                document.getElementById('description').innerText = data.description;
+                document.getElementById('result').style.display = 'block';
+            } else {
+                alert(data.error);
+            }
+        };
+
+        document.getElementById('send-question').onclick = async function() {
+            const question = document.getElementById('question').value;
+            const description = document.getElementById('description').innerText;
+
+            const response = await fetch('/chat_with_image', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ question, description })
+            });
+            const data = await response.json();
+
+            const chatLog = document.getElementById('chat-log');
+            chatLog.innerHTML += `<div class="message"><strong>You:</strong> ${question}</div>`;
+            chatLog.innerHTML += `<div class="message"><strong>Bot:</strong> ${data.answer}</div>`;
+
+            document.getElementById('question').value = '';
+        };
+    </script>
+</body>
+</html>
